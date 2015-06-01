@@ -12,7 +12,7 @@ import br.com.mrcsfelipe.spring.entity.Tarefa;
 @Service
 public class JpaTarefaDao{
   
-  @PersistenceContext
+  @PersistenceContext(unitName="persistenceUnit")
   EntityManager manager;
 
   //sem construtor

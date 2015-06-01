@@ -28,6 +28,16 @@ public class HelloWorldController {
         return "helloworld";
     }
 	
+	@RequestMapping("/")
+    public String index(
+            @RequestParam(value="name", required=false, defaultValue="World") 
+            String name, 
+            Model model) {
+		
+        model.addAttribute("name", name);
+        return "helloworld";
+    }
+	
 	
 	@RequestMapping(value = "/addTarefa", method = RequestMethod.POST)
 	@Transactional
